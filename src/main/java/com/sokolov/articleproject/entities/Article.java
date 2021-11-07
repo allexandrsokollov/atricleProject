@@ -1,33 +1,22 @@
-package com.sokolov.atricleproject.entities;
+package com.sokolov.articleproject.entities;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
-
-@Entity
+@Component
 public class Article {
-    private static int amountOfArticles;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
     private String title;
     private String body;
 
-    public Article() {}
+    public Article() {
+
+    }
 
     public Article(String title, String body) {
         this.title = title;
         this.body = body;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

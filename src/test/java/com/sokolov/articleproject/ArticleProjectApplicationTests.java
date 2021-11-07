@@ -1,4 +1,4 @@
-package com.sokolov.atricleproject;
+package com.sokolov.articleproject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
