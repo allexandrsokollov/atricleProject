@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 public class ArticleDAO {
 
-    //private final JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
     private List<Article>  arts = new ArrayList<>();
 
     {
@@ -28,17 +28,17 @@ public class ArticleDAO {
 
 
     }
-//    @Autowired
-//    public ArticleDAO(JdbcTemplate jdbcTemplate) {
-//        this.jdbcTemplate = jdbcTemplate;
-//    }
+    @Autowired
+    public ArticleDAO(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
 
     public List<Article> getArts() {
         return arts;
     }
 
-//    public List<Article> getAllArticles() {
-//        return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE", new ArticleMapper());
-//    }
+    public List<Article> getAllArticles() {
+        return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE", new ArticleMapper());
+    }
 }

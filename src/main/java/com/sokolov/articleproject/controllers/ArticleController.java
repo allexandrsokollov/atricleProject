@@ -21,7 +21,7 @@ public class ArticleController {
 
     @GetMapping("/")
     public String mainPage(Model model) {
-        model.addAttribute("article", articleDAO.getArts());
+        model.addAttribute("article", articleDAO.getAllArticles());
         return "index";
     }
 }
