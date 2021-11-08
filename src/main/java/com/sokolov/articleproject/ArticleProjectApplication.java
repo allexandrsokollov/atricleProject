@@ -17,22 +17,22 @@ public class ArticleProjectApplication {
     }
 
 
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-        dataSource.setDriverClassName("com.h2database");
-        dataSource.setUrl("jdbc:h2:mem:default");
-        dataSource.setUsername("asd");
-        dataSource.setPassword("yfchbufdyjv");
-
-        return dataSource;
-    }
-    @Bean
-    public JdbcTemplate jdbcTemplate() {
-        return new JdbcTemplate(dataSource());
-    }
-
+//    @Bean
+//    public DataSource dataSource() {
+//        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//
+//        dataSource.setDriverClassName("org.h2.Driver");
+//        dataSource.setUrl("jdbc:h2:mem:default;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
+//        dataSource.setUsername("ASD");
+//        dataSource.setPassword("123");
+//
+//        return dataSource;
+//    }
+//    @Bean
+//    public JdbcTemplate jdbcTemplate() {
+//        return new JdbcTemplate(dataSource());
+//    }
+//
 
 
 }
