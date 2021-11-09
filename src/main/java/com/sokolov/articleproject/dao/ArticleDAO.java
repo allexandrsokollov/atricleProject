@@ -23,5 +23,8 @@ public class ArticleDAO {
         return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE", new ArticleMapper());
     }
 
-
+    public void addNewArticle(Article article) {
+        jdbcTemplate.update("INSERT INTO ARTICLE (title, body) VALUES (?, ?)",
+                article.getTitle(), article.getBody());
+    }
 }
