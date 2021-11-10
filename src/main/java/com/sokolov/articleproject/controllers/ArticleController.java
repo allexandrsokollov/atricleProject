@@ -32,23 +32,15 @@ public class ArticleController {
         return "index";
     }
 
-//    @GetMapping("/add_article")
-//    public String addArt(@ModelAttribute("file" ) MultipartFile file) {
-//        return "add_article";
-//    }
-//
-//    @PostMapping()
-//    public String addArticle(@ModelAttribute("file" ) MultipartFile file) {
-//        return "redirect:/";
-//    }
-
-    @GetMapping("/testAddition")
-    public String tstAdd(@ModelAttribute(name="article") Article article) {
-        return "testAddition";
+    @GetMapping("/add_article")
+    public String addArt() {
+        return "add_article";
     }
+
     @PostMapping()
-    public String testAddition(@ModelAttribute(name="article") Article article) {
-        articleDAO.addNewArticle(article);
+    public String addArticle(@RequestParam(value = "file", required = false) MultipartFile file) {
         return "redirect:/";
     }
+
+
 }
