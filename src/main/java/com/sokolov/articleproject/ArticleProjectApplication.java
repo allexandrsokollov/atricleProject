@@ -25,7 +25,7 @@ public class ArticleProjectApplication {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName("org.h2.Driver");
-        dataSource.setUrl("jdbc:h2:mem:default;");
+        dataSource.setUrl("jdbc:h2:~/default");
         dataSource.setUsername("asd");
         dataSource.setPassword("yfchbufdyjv");
 

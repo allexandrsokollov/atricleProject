@@ -1,4 +1,3 @@
-drop table if exists ARTICLE;
 
 CREATE TABLE if not exists ARTICLE (
        id int auto_increment not null primary key,
@@ -7,10 +6,10 @@ CREATE TABLE if not exists ARTICLE (
 );
 
 insert into ARTICLE (title, body)
-VALUES ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
+VALUES ( 'title_tdfkjghdlkfhglkdhflgkjhdlfghldifhg;dfhlgkdhfglkhdfghdlkfhgldkfhglkhdfgnd;flkjg;dlfmgl;jitle','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
+       ( 'title_tgdfdfitle','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
+       ( 'title_title','ArticleBodytitle_title'',''ArticleBody_ArticleBody_ArticleBody_\nArticleBody_Arttitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeicleBody_ArticleBody_title_title'',''ArticleBody_ArticleBody_ArticleBody_\nArticleBody_Arttitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeicleBody_ArticleBody_title_title'',''ArticleBody_ArticleBody_ArticleBody_\nArticleBody_Arttitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeicleBody_ArticleBody_title_title'',''ArticleBody_ArticleBody_ArticleBody_\nArticleBody_Arttitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeicleBody_ArticleBody_title_title'',''ArticleBody_ArticleBody_ArticleBody_\nArticleBody_Arttitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeicleBody_ArticleBody__ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
+       ( 'tidgfgtle_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
+       ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_Arttitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeicleBody_ArticleBody_' ),
        ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
-       ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
-       ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
-       ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
-       ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' ),
-       ( 'title_title','ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' );
+       ( 'title_titdfgdfge','Articletitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgetitle_titdfgdfgeBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_' );

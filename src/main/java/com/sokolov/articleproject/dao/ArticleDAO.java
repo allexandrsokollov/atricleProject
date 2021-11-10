@@ -13,32 +13,18 @@ import java.util.List;
 public class ArticleDAO {
 
     private final JdbcTemplate jdbcTemplate;
-    private List<Article>  arts = new ArrayList<>();
 
-    {
-        arts.add(new Article("title_title",
-                "ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_"));
-        arts.add(new Article("title_title",
-                "ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_"));
-        arts.add(new Article("title_title",
-                "ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_"));
-        arts.add(new Article("title_title",
-                "ArticleBody_ArticleBody_ArticleBody_\nArticleBody_ArticleBody_ArticleBody_"));
-
-
-
-    }
     @Autowired
     public ArticleDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
-    public List<Article> getArts() {
-        return arts;
+    public List<Article> getAllArticles() {
+        return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE ORDER BY ID DESC", new ArticleMapper());
     }
 
-    public List<Article> getAllArticles() {
-        return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE", new ArticleMapper());
+    public void addNewArticle(Article article) {
+        jdbcTemplate.update("INSERT INTO ARTICLE (title, body) VALUES (?, ?)",
+                article.getTitle(), article.getBody());
     }
 }
