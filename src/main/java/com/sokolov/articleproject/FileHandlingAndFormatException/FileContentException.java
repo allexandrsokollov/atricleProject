@@ -1,6 +1,6 @@
 package com.sokolov.articleproject.FileHandlingAndFormatException;
 
-public class FileContentException extends Exception{
+public class FileContentException extends MyFileExceptions {
     public FileContentException(String message) {
         super(message);
     }

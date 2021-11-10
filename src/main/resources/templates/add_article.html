@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>File Uploading</title>
@@ -8,6 +8,8 @@
 
 <form method="POST" enctype="multipart/form-data" action="/" >
     <table>
+
+        <p th:text="${error}">VALUE</p>
         <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
         <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
     </table>

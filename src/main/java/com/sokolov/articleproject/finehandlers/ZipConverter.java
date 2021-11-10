@@ -23,7 +23,7 @@ public class ZipConverter {
         text = ZipFileHandler.getStringListFromZip(file);
 
         if(text.size() < 2) {
-            throw new FileContentException();
+            throw new FileContentException("Content is wrong");
         }
 
         article.setTitle(text.get(0).toString());
