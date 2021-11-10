@@ -28,10 +28,35 @@ public class ArticleController {
     }
 
     @GetMapping("/")
-    public String mainPage(Model model) {
+    public String mainPage(@RequestParam(value = "addTestData",  required = false, defaultValue = "false") boolean bl,
+                           @RequestParam(value = "cleanup", required = false, defaultValue = "false") boolean clUp,
+                           Model model) {
         model.addAttribute("article", articleDAO.getAllArticles());
+
+        if (bl) {
+            return "redirect:/tadd";
+        }
+        if (clUp) {
+            return "redirect:/clean";
+        }
         return "index";
     }
+
+    @GetMapping("/tadd")
+    public String testAddi() {
+        articleDAO.testAddition();
+        return "redirect:/";
+    }
+
+    @GetMapping("/clean")
+    public String clean() {
+        articleDAO.cleanUpDB();
+        return "redirect:/";
+    }
+
+
+
+
 
     @GetMapping("/add_article")
     public String addArt(@RequestParam(value = "error", required = false) String error, Model model) {
