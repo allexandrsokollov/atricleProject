@@ -2,12 +2,12 @@ package com.sokolov.articleproject.finehandlers;
 
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -16,14 +16,17 @@ import java.util.zip.ZipInputStream;
 @NoArgsConstructor
 public class ZipFileHandler {
 
-    static  List<StringBuilder> getStringListFromZip(File file) {
+    static  List<StringBuilder> getStringListFromZip(MultipartFile file) throws IOException {
 
         List<StringBuilder> dataToReturn = new ArrayList<>();
 
-        try(ZipInputStream zin = new ZipInputStream(new FileInputStream(file))) {
+        InputStream is = new ByteArrayInputStream(file.getBytes());
+
+        try(ZipInputStream zin = new ZipInputStream(is)) {
 
             ZipEntry entry;
             StringBuilder temp = new StringBuilder();
+
 
             while ((zin.getNextEntry()) != null) {
 
@@ -33,7 +36,21 @@ public class ZipFileHandler {
                     temp.append(new String(bytes, Charset.defaultCharset()));
                 }
 
-                dataToReturn.add(new StringBuilder(temp));
+                StringBuilder tm = new StringBuilder();
+
+                for (int i = 0; i < temp.length(); i++) {
+                    if (temp.charAt(i) == '\r')
+                        i++;
+
+                    if (temp.charAt(i) == '\n') {
+                        dataToReturn.add(new StringBuilder(tm.append("\r\n")));
+                        tm.delete(0, tm.length());
+                        continue;
+                    }
+
+                    tm.append(temp.charAt(i));
+                }
+
                 temp.delete(0, temp.length());
             }
 

@@ -1,4 +1,3 @@
-drop table if exists ARTICLE;
 
 CREATE TABLE if not exists ARTICLE (
        id int auto_increment not null primary key,

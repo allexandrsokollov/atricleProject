@@ -2,6 +2,7 @@ package com.sokolov.articleproject.controllers;
 
 import com.sokolov.articleproject.dao.ArticleDAO;
 import com.sokolov.articleproject.entities.Article;
+import com.sokolov.articleproject.finehandlers.ZipConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.zip.ZipFile;
 
@@ -38,7 +40,8 @@ public class ArticleController {
     }
 
     @PostMapping()
-    public String addArticle(@RequestParam(value = "file", required = false) MultipartFile file) {
+    public String addArticle(@RequestParam(value = "file", required = false) MultipartFile file) throws IOException {
+        articleDAO.addNewArticle(ZipConverter.toArticle(file));
         return "redirect:/";
     }
 

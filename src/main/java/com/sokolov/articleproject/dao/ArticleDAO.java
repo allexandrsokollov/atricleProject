@@ -20,7 +20,7 @@ public class ArticleDAO {
     }
 
     public List<Article> getAllArticles() {
-        return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE", new ArticleMapper());
+        return jdbcTemplate.query("SELECT TITLE, BODY FROM ARTICLE ORDER BY ID DESC", new ArticleMapper());
     }
 
     public void addNewArticle(Article article) {
