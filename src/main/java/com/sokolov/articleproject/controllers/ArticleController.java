@@ -40,7 +40,7 @@ public class ArticleController {
     }
 
     @PostMapping()
-    public String addArticle(@RequestParam(value = "file", required = false) MultipartFile file) throws IOException {
+    public String addArticle(@RequestParam(value = "file", required = false) MultipartFile file) throws Exception {
         articleDAO.addNewArticle(ZipConverter.toArticle(file));
         return "redirect:/";
     }
